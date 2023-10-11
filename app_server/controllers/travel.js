@@ -6,7 +6,7 @@ const apiOptions = {
 /* internal method to render the travel list */
 const renderTravelList = (req, res, responseBody) => {
 	let message = null;
-	let pageTitle = process.eventNames.npm_package_description + ' - Travel';
+	let pageTitle = process.env.npm_package_name + ' - Travel';
 	if (!(responseBody instanceof Array)) {
 		message = "API lookup error";
 		responseBody = [];
