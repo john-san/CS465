@@ -69,3 +69,4 @@ connect()
 
 // bring in the Mongooose schema
 require("./travlr")
+require("./user")
