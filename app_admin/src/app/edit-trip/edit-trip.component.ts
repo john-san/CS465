@@ -41,6 +41,7 @@ export class EditTripComponent implements OnInit {
       perPerson: ['', Validators.required],
       image: ['', Validators.required],
       description: ['', Validators.required],
+      prevCode: [tripCode]
     })
 
     console.log(`EditTripComponent#onInit calling TripDataService#getTrip/${tripCode}`)
@@ -59,6 +60,8 @@ export class EditTripComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log("EditTripComponent#onSubmit")
+    console.log(this.editForm.value)
     this.submitted = true;
     if (this.editForm.valid) {
       this.tripDataService.updateTrip(this.editForm.value)

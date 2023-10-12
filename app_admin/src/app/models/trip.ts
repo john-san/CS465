@@ -8,4 +8,5 @@ export default interface Trip {
   perPerson: string,
   image: string,
   description: string
+  prevCode?: any;
 }

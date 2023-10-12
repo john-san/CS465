@@ -40,7 +40,7 @@ export class TripDataService {
   public updateTrip(formData: Trip) : Promise<Trip> {
     console.log('Inside TripDataService#updateTrip')
     console.log(formData)
-    return this.http.put(`${this.tripUrl}${formData.code}`, formData)
+    return this.http.put(`${this.tripUrl}${formData.prevCode}`, formData) // prevCode is the original tripCode, in case it was changed
       .toPromise()
       .then(response => response.json() as Trip)
       .catch(this.handleError);
