@@ -59,6 +59,20 @@ export class EditTripComponent implements OnInit {
       });
   }
 
+  onDelete(): void {
+    const tripName = this.editForm.get('name').value;
+    const tripCode = this.editForm.get('code').value;
+
+    // ask for confirmation
+    if (!confirm("Are you sure to delete " + tripName + "?")) {
+      return;
+    }
+
+    localStorage.removeItem("tripCode");
+    localStorage.setItem("tripCode", tripCode);
+    this.router.navigate(["delete-trip"]);
+  }
+
   onSubmit() {
     console.log("EditTripComponent#onSubmit")
     console.log(this.editForm.value)

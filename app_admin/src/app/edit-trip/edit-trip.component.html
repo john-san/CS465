@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col-md-3 mb-5">
   <h2 class="text-center">Edit Trip</h2>
   <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -105,6 +105,9 @@
         <div *ngIf="f.description.errors.required">Description is required</div>
       </div>
     </div>
-    <button type="submit" class="btn btn-info">Save</button>
-  </form>
+    <div>
+      <button type="button" (click)="onDelete()" class="btn btn-danger mr-4">Delete</button>
+      <button type="submit" class="btn btn-info">Save</button>
+    </div>
+    </form>
 </div>

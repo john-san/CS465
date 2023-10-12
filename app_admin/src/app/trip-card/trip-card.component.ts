@@ -25,4 +25,15 @@ export class TripCardComponent implements OnInit {
     this.router.navigate(['/edit-trip']);
   }
 
+  private deleteTrip(trip: Trip): void {
+    // ask for confirmation
+    if (!confirm("Are you sure to delete " + trip.name + "?")) {
+      return;
+    }
+
+    localStorage.removeItem("tripCode");
+    localStorage.setItem("tripCode", trip.code);
+    this.router.navigate(["delete-trip"]);
+  }
+
 }
