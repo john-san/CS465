@@ -13,7 +13,7 @@ export class TripCardComponent implements OnInit {
   @Input() trip: Trip;
 
   constructor(
-    private router: Router
+    private router: Router,
     private authenticationService: AuthenticationService
   ) { }
 
