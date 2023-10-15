@@ -62,12 +62,12 @@ export class TripDataService {
     return Promise.reject(error.message || error);
   }
 
-  private login(user: User): Promise<Authresponse> {
+  public login(user: User): Promise<Authresponse> {
     console.log('Inside TripDataService#login')
     return this.makeAuthApiCall('login', user);
   }
 
-  private register(user: User): Promise<Authresponse> {
+  public register(user: User): Promise<Authresponse> {
     console.log('Inside TripDataService#register')
     return this.makeAuthApiCall('register', user);
   }
