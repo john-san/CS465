@@ -82,7 +82,7 @@ img {
 	background-position: 0 -59px;
 	color: #6d6157;
 }
-#navigation li.selected a {
+#navigation li.active a {
 	background-position: 0 0;
 	color: #e4e1bd;
 }

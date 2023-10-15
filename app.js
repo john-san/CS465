@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const hbs = require("hbs");
 const passport = require("passport");
+hbs.registerHelper('isActive', (a, b) => a === b ? 'active' : ''); // for nav links
 
 require("./app_api/models/db");
 
@@ -48,6 +49,7 @@ app.use("/api", (req, res, next) => {
 })
 
 app.use("/", indexRouter);
+app.use("/about", indexRouter);
 app.use("/users", usersRouter);
 app.use("/travel", travelRouter);
 app.use("/api", apiRouter);

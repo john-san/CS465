@@ -19,7 +19,8 @@ const renderTravelList = (req, res, responseBody) => {
 	res.render("travel", {
 		title: pageTitle,
 		trips: responseBody,
-		message
+		message,
+		activePage: "travel"
 	});
 };
 
